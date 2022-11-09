@@ -1,6 +1,8 @@
 from cours.data import circle
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.neural_network import MLPClassifier
+
 
 """ ### PARTIE 1 CHARGEMENT ET AFFICHAGE DES DONNEES
 """
@@ -21,10 +23,26 @@ for y in ys:
     for x in xs:
         image.append([x, y])
 
-mycolormap = plt.cm.Spectral  # carte de couleur
+mycolormap = plt.cm.PiYG  # carte de couleur
 
 # points de couleur des données
 plt.scatter(
     valeurs[:, 0], valeurs[:, 1],
     c=classe, cmap=mycolormap, edgecolors='black')
+
+
+""" ### PARTIE 2 UN PREMIER RESEAU
+"""
+
+mlp = MLPClassifier(
+    hidden_layer_sizes=(50,), activation='tanh', solver='lbfgs')
+mlp.fit(valeurs, classe)  # apprentissage
+
+# utilisation du réseau entrainé pour créer le fond du graphique
+out = mlp.predict_proba(np.asarray(image))
+Z = out[:, 1]  # on récupère les valeurs pour construire le fond
+Z = Z.reshape((len(ys), len(xs)))  # mise en forme des valeurs du fond
+plt.contourf(xs, ys, Z, cmap=mycolormap, alpha=.6)  # fond de l'affichage
+
+
 plt.show()  # affichage
