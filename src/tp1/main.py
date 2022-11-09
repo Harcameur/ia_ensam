@@ -9,6 +9,14 @@ from sklearn.neural_network import MLPClassifier
 
 valeurs, classe = circle()
 
+
+def carre(x):
+    return [x[0]**2, x[1]**2]
+
+
+# Valeurs carré :
+# valeurs = np.array(list(map(carre, valeurs)))
+
 # bornes min/max du graphique
 x_min = valeurs[:, 0].min() - .5
 x_max = valeurs[:, 0].max() + .5
@@ -35,7 +43,7 @@ plt.scatter(
 """
 
 mlp = MLPClassifier(
-    hidden_layer_sizes=(50,), activation='tanh', solver='lbfgs')
+    hidden_layer_sizes=(1,), activation='tanh', solver='lbfgs')
 mlp.fit(valeurs, classe)  # apprentissage
 
 # utilisation du réseau entrainé pour créer le fond du graphique
