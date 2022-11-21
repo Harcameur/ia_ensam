@@ -43,7 +43,7 @@ plt.scatter(
 """
 
 mlp = MLPClassifier(
-    hidden_layer_sizes=(1,), activation='tanh', solver='lbfgs')
+    hidden_layer_sizes=(50,), activation='tanh', solver='lbfgs')
 mlp.fit(valeurs, classe)  # apprentissage
 
 # utilisation du réseau entrainé pour créer le fond du graphique
@@ -51,6 +51,5 @@ out = mlp.predict_proba(np.asarray(image))
 Z = out[:, 1]  # on récupère les valeurs pour construire le fond
 Z = Z.reshape((len(ys), len(xs)))  # mise en forme des valeurs du fond
 plt.contourf(xs, ys, Z, cmap=mycolormap, alpha=.6)  # fond de l'affichage
-
 
 plt.show()  # affichage
