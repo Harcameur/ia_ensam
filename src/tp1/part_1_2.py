@@ -23,6 +23,7 @@ x_max = valeurs[:, 0].max() + .5
 y_min = valeurs[:, 1].min() - .5
 y_max = valeurs[:, 1].max() + .5
 
+
 # création de la couleur de fond
 image = []
 xs = np.arange(x_min, x_max, 0.05)
