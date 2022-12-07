@@ -16,6 +16,14 @@ TEST_RATIO = .4
 
 
 def creating_sets(_train_size: int | None) -> tuple:
+    """Créer un set de données selon la train_size
+
+    Args:
+        _train_size (int | None): taille des jeu de données d'entrainement
+
+    Returns:
+        tuple: 4 list cx_train, cx_test, pathologie_train, pathologie_test
+    """
     cx_train, cx_test, pathologie_train, pathologie_test =\
         train_test_split(
             cx, pathologie, train_size=_train_size, test_size=TEST_RATIO)
@@ -24,6 +32,15 @@ def creating_sets(_train_size: int | None) -> tuple:
 
 def mlp_apprentissage(
         _cx_train: list, _pathologie_train: list) -> MLPClassifier:
+    """Fonction d'apprentissage
+
+    Args:
+        _cx_train (list): donnée d'entré d'entrainement
+        _pathologie_train (list): donnée de sortie d'entrainement
+
+    Returns:
+        MLPClassifier: objet IA
+    """
     mlp = MLPClassifier(
         hidden_layer_sizes=(50, 6),
         activation='tanh',
@@ -36,6 +53,16 @@ def mlp_apprentissage(
 
 def filter_cx_by_path(
         _cx_test: list, _pathologie_test: list, path_num: int) -> tuple:
+    """Filtre les données pour quelles correspondent à une pathologie
+
+    Args:
+        _cx_test (list): jeu de test d'entrée à filtrer
+        _pathologie_test (list): jeu de test de sortie à filtrer
+        path_num (int): numéro de pathologie
+
+    Returns:
+        tuple: les deux jeux de données filtrés
+    """
     _filtered_cx = [
         _cx_test[i]
         for i in range(len(_cx_test))
@@ -45,7 +72,17 @@ def filter_cx_by_path(
     return _filtered_cx, _filtered_pathologie_test
 
 
-def train_size_score_variation(_min: int, qte: int):
+def train_size_score_variation(_min: int, qte: int) -> list:
+    """Creation de liste avec des valeurs de taille croissante (train_size)
+    de jeu de données
+
+    Args:
+        _min (int): taille minimum
+        qte (int): nombre de valeurs
+
+    Returns:
+        list: listes des tailles
+    """
     _list_train_size = np.linspace(
         _min, int(TAILLE_TABLEAU*(1-TEST_RATIO)), qte)
 
@@ -54,7 +91,15 @@ def train_size_score_variation(_min: int, qte: int):
     return _entier_list_train_size
 
 
-def get_score_for_spec_train_size(_train_size: int):
+def get_score_for_spec_train_size(_train_size: int) -> tuple:
+    """Récupération des scores pour une taille de donnée fixés
+
+    Args:
+        _train_size (int): taille du jeu
+
+    Returns:
+        tuple: score d'entrainement, score de test
+    """
     _cx_train, _cx_test, _pathologie_train, _pathologie_test =\
         creating_sets(_train_size)
     _mlp = mlp_apprentissage(_cx_train, _pathologie_train)
@@ -62,7 +107,10 @@ def get_score_for_spec_train_size(_train_size: int):
         _mlp.score(_cx_test, _pathologie_test)
 
 
-def comparaison_train_size():
+def comparaison_train_size() -> None:
+    """Fonction principale pour la question 1 de comparaison de score selon le
+    jeu de données
+    """
     print("Attention cette partie peut prendre du temps")
     _entier_list_train_size = train_size_score_variation(100, 20)
     print(_entier_list_train_size, TAILLE_TABLEAU)
@@ -81,7 +129,14 @@ def comparaison_train_size():
 
 def rendu_graphique(
         _entier_list_train_size: list, _train_score_list: list,
-        _test_score_list: list):
+        _test_score_list: list) -> None:
+    """Creation des graphiques avec matplotlib.pyplot
+
+    Args:
+        _entier_list_train_size (list): taille des jeux de données
+        _train_score_list (list): liste des scores d'entrainement
+        _test_score_list (list): liste des scores de testes
+    """
     plt.plot(
         _entier_list_train_size,
         _train_score_list,
@@ -98,7 +153,9 @@ def rendu_graphique(
     plt.show()
 
 
-def comparaison_score_by_pathologie():
+def comparaison_score_by_pathologie() -> None:
+    """Test les scores de chaques pathologies
+    """
     print("démarrage de la comparaison par score de pathologie")
     _cx_train, _cx_test, _pathologie_train, _pathologie_test =\
         creating_sets(None)
@@ -113,17 +170,27 @@ def comparaison_score_by_pathologie():
 
 
 def color_score(_test_score: float) -> str:
+    """Colorisation des valeurs de score dans la console
+
+    Args:
+        _test_score (float): score de test
+
+    Returns:
+        str: le score avec une couleur selon sa valeur
+    """
     if _test_score <= 0.7:
         return f"\033[91m\033[1m{_test_score}\033[0m"
     return f"\033[92m\033[1m{_test_score}\033[0m"
 
 
-def main():
+def main() -> None:
+    """Fonction de démarrage du module
+    """
     print("part2")
     # Question 1 parti 2
-    comparaison_train_size()
+    # comparaison_train_size()
     # Question 2 parti 2
-    # comparaison_score_by_pathologie()
+    comparaison_score_by_pathologie()
 
 
 if __name__ == "__main__":
