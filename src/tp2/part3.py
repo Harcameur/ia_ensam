@@ -80,7 +80,18 @@ def training_enlevant_une_caracteristique() -> None:
         show_score(_mlp, cx_train, cx_test, pathologie_train, pathologie_test)
 
 
+def training_c6():
+    """Test avec juste la caractéristique C6
+    """
+    cx_train, cx_test, pathologie_train, pathologie_test =\
+        creation_sets([0, 1, 2, 3, 4, 5, 7])
+    _mlp = mlp_apprentissage(cx_train, pathologie_train)
+    show_score(_mlp, cx_train, cx_test, pathologie_train, pathologie_test)
+
+
 if __name__ == "__main__":
-    # Question 1: Caractéristique par caractéristique
+    # # Question 1: Caractéristique par caractéristique
     training_enlevant_une_caracteristique()
-    # Question 2: Caractéristique comibné
+    # avec juste la caractéristique d'indice 6 = C6
+    training_c6()
+    # # Question 2: Caractéristique comibné
