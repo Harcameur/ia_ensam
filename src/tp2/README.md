@@ -63,3 +63,4 @@ On remarque que les pathologies qui tout à l'heure était proche de 0 en score 
 La suposition sur ce changement de score juste en changeant le solver, est que le jeu de donnée a une taille assez conséquente et le solveur `adam` est plus adapté a ce type contrairement au `lbfgs`.
 
 ## __Partie 3__ : Etude avancée
+
