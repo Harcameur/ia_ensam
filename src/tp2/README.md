@@ -3,6 +3,23 @@
 ## __Reponse Partie 1__ : Decouverte de la base
 
 
+### __Q1.1__ : Que remarquez vous au sujet de nombre d’occurrences de chaque pathologie ?
+
+
+ ![pathologie](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/répartition_pathologie.png)
+
+_Figure: répartition des pathologies_
+
+On remarque une répartition hétérogène des pathologies avec une très faible densité pour la pathologie 4.
+
+> Cela risque créer des problemes de classification pour la pathologie 4. 
+
+### __Q1.2__ : De quelle forme est la distribution de l’âge ? Est-ce normal ?
+
+ ![age](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/répartition_age.png)
+
+ On a une gaussienne pour la répartition des âges.
+
 ## __Reponse Partie 2__ : Apprentissage sur la base 
 
 
@@ -45,4 +62,4 @@ On remarque que les pathologies qui tout à l'heure était proche de 0 en score 
 
 La suposition sur ce changement de score juste en changeant le solver, est que le jeu de donnée a une taille assez conséquente et le solveur `adam` est plus adapté a ce type contrairement au `lbfgs`.
 
-## __Partie 3__ : Etude avancée.
+## __Partie 3__ : Etude avancée
