@@ -84,3 +84,22 @@ Pour tester l'importance de chaque caractéritique on va faire plusieurs entrain
  >C'est un score plutôt élevé malgré qu'on ait enlevé 7 caractéristiques.
 
 ### __Q3.2__ : À l’aide de la Q 2.2, essayez de déterminer si certaines entrées sont plus déterminantes sur l’apparition decertaines pathologies.
+
+Le programme va ici filtrer chaque jeu de donnés avec juste une seule caractéristique et retourner le score de chaque pathlogie dans le cadre du test:
+
+ ![score_path_par_carac1](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/score_path_par_carac1.png)
+
+ ![score_path_par_carac2](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/score_path_par_carac2.png)
+
+Les informations ressortants des résultats sont :
+
+* L'age est déterminants pour toutes les pathologies sauf la 4 et moyennement pour la 3.
+* La caractéristique 1 est déterminants pour toutes les pathologies sauf la 3 et la 4.
+* La caractéristique 2 est déterminants pour toutes les pathologies sauf la 2 et moyennement la 4.
+* La caractéristique 3 est déterminants pour toutes les pathologies surtout pour la 0, 1 et 2.
+* La caractéristique 4 est déterminants pour toutes les pathologies sauf la 5 et moyennement la 4.
+* La caractéristique 5 est déterminants pour toutes les pathologies.
+* La caractéristique 6 est déterminants pour la pathologie 0 surtout et moyennement 3.
+* La caractéristique 7 est déterminants pour toutes les pathologies sauf la 4.
+
+Si on fait un bilan on voit que les caractéristiques 5 et 3 sont les caractéristiques les plus déterminantes pour toutes les pathologies.
