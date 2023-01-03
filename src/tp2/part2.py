@@ -53,7 +53,7 @@ def mlp_apprentissage(
 
 def filter_cx_by_path(
         _cx_test: list, _pathologie_test: list, path_num: int) -> tuple:
-    """Filtre les données pour quelles correspondent à une pathologie
+    """Filtre les données pour qu'elles correspondent à une pathologie
 
     Args:
         _cx_test (list): jeu de test d'entrée à filtrer
@@ -188,7 +188,7 @@ def main() -> None:
     """
     print("part2")
     # Question 1 parti 2
-    # comparaison_train_size()
+    comparaison_train_size()
     # Question 2 parti 2
     comparaison_score_by_pathologie()
 

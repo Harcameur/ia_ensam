@@ -70,9 +70,11 @@ Pour tester l'importance de chaque caractéritique on va faire plusieurs entrain
 
 >On verra si le score est élevé ça implique que la caractéristique n'est pas importante particulierement et vis-versa
  - essaie 1 :
+ 
  ![score_filtre_essaie_1](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/score_sans_une_caracteristique_1er_essai.png)
  
  - essaie 2 :
+
  ![score_filtre_essaie_1](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/score_sans_une_caracteristique_1er_essai.png)
 
  On voit bien ici que la caractéristique la plus influente c'est la 6. D'ailleurs si on fait juste le test en filtrant tout les autres caractéristiques on obtient environ 0.83 de score (entrainement et test)
@@ -80,3 +82,5 @@ Pour tester l'importance de chaque caractéritique on va faire plusieurs entrain
  ![score_filtre_essaie_1](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp2/ressources/score_avec_juste_la_caractéristique_6.png)
  
  >C'est un score plutôt élevé malgré qu'on ait enlevé 7 caractéristiques.
+
+### __Q3.2__ : À l’aide de la Q 2.2, essayez de déterminer si certaines entrées sont plus déterminantes sur l’apparition decertaines pathologies.
