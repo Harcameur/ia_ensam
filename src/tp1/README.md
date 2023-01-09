@@ -7,7 +7,7 @@
 ### Q2.1 Changez le nombre de neurones de la couche cachée à 20, puis 10, puis 5, puis 1, qu'observez vous ?
 
 ---
-En changeant le nombre de neuronnes on obtiens:
+En changeant le nombre de neuronnes on obtient:
 - 50 :
  ![50](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/multiple%20neurone/50.png)
 - 20 :
@@ -19,15 +19,15 @@ En changeant le nombre de neuronnes on obtiens:
 - 1 :
  ![1](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/multiple%20neurone/1.png)
 
-On observe que les lignes délimitants la zone verte deviennent de plus en plus cassante on a une zone qui épouse moins la forme des points.
+On observe que les lignes délimitants la zone verte deviennent de plus en plus cassantes, on a une zone qui épouse moins la forme des points.
 
 ---
 
-### Q2.2 Avec 50 neuronnes Avec 50 neurones essayez les 4 fonctions d’activation, laquelle ne convient pas à ces données ? Pourquoi ?
+### Q2.2 Avec 50 neurones essayez les 4 fonctions d’activation, laquelle ne convient pas à ces données ? Pourquoi ?
 
 ---
 
-En changeant les fonctions d'activations on obtiens :
+En changeant les fonctions d'activation on obtient :
 
 - `identity` ![Identity image](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/fonction%20activations/identity.png)
 
@@ -37,7 +37,7 @@ En changeant les fonctions d'activations on obtiens :
 
 - `tanh` ![Tanh image](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/fonction%20activations/tanh.png)
 
-La fonction d'activation `identity` semble avoir des souci à afficher une délimitation correct
+La fonction d'activation `identity` semble avoir des soucis à afficher une délimitation correcte.
 
 ---
 
@@ -46,12 +46,12 @@ La fonction d'activation `identity` semble avoir des souci à afficher une déli
 ---
 
 
-En testant sur tenserflow playground un cas a peu près similaire, en mettant les valeurs d'entrées au carré on obtiens:
+En testant sur tenserflow playground un cas à peu près similaire, en mettant les valeurs d'entrées au carré on obtient:
 
 
 ![tsf image](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/tsf.png)
 
 
-Ainsi si on l'applique sur notre programme on a :
+Ainsi, si on le met au carré sur notre programme on a :
 
 ![Q23 image](https://raw.githubusercontent.com/Harcameur/ia_ensam/main/src/tp1/ressources/Q23.png)
