@@ -138,14 +138,14 @@ def comparaison_path_cara_determination() -> None:
         "Comparaison de \
 l'influence d'une caractéristique sur chaque pathologie")
     for i in range(NOMBRE_CARACTERISTIQUE):
-        print(f"\033[96m\033[1mCaractéristique : n°{i} \033[0m")
+        print(f"\033[96mss\033[1mCaractéristique : n°{i} \033[0m")
         comparaison_score_by_pathologie_filtered([i])
 
 
 if __name__ == "__main__":
     # # Question 1: Caractéristique par caractéristique
-    # training_enlevant_une_caracteristique()
+    training_enlevant_une_caracteristique()
     # avec juste la caractéristique d'indice 6 = C6
-    # training_c6()
+    training_c6()
     # # Question 2: Caractéristique comibné
     comparaison_path_cara_determination()
